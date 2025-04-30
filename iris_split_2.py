@@ -16,16 +16,16 @@ y = iris.target
 feature_names = ['꽃받침 길이', '꽃받침 너비', '꽃잎 길이', '꽃잎 너비']
 target_names = ['세토사', '버시컬러', '버지니카']
 
-# 한글 폰트 설정
-font_path = 'Maplestory Light.ttf'
-
-font = fm.FontProperties(fname=font_path)
-fm.fontManager.addfont(font_path)
-font_name = font.get_name()
-plt.rc('font', family=font_name)
-# 마이너스 기호 깨짐 방지
-plt.rc('axes', unicode_minus=False)  
-
+try:
+    font_path = 'Maplestory Light.ttf'
+    font = fm.FontProperties(fname=font_path)
+    fm.fontManager.addfont(font_path)
+    font_name = font.get_name()
+    plt.rc('font', family=font_name)
+    # 마이너스 기호 깨짐 방지
+    plt.rc('axes', unicode_minus=False)
+except:
+    print("한글 폰트를 찾을 수 없습니다. 기본 폰트를 사용합니다.")
 
 # 데이터 분할 - 학습용(80%)과 테스트용(20%)
 X_train, X_test, y_train, y_test = train_test_split(
