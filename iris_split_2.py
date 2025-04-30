@@ -7,6 +7,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 
+#2025_04_30
+
 # 데이터 로드
 iris = datasets.load_iris()
 X = iris.data
